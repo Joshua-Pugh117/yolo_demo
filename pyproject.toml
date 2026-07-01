@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yolo-runner"
+version = "0.1.0"
+description = "Run YOLO26 detect, segment, and pose on a folder of photos."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "ultralytics>=8.4.0",
+]
+
+[project.scripts]
+yolo-run = "yolo_runner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["yolo_runner*"]
