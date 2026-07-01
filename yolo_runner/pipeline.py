@@ -52,7 +52,8 @@ def run_pipeline(
             out_path = task_dir / image.name
 
             results = model.predict(source=str(image), verbose=False)
-            annotated = results[0].plot()
+            show_boxes = task == "detect"
+            annotated = results[0].plot(boxes=show_boxes)
             cv2.imwrite(str(out_path), annotated)
             print(f"    {task:8} -> {out_path}")
 
