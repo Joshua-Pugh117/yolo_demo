@@ -12,12 +12,7 @@ build/
 .venv/
 venv/
 
-# Sample / user photos (keep folder via .gitkeep)
-photos/*
-!photos/.gitkeep
-
 # YOLO outputs & weights cache
-results/
 runs/
 *.pt
 
